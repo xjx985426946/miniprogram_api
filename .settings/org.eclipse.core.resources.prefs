@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
-encoding//Intbee_API/Request/cosumer/users.py=utf-8
+encoding//Intbee_API/Request/user/cosumer_information.py=utf-8
+encoding//Intbee_API/Request/user/users.py=utf-8
 encoding//Intbee_API/common/readExcel.py=utf-8
