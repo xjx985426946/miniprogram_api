@@ -1,4 +1,16 @@
 eclipse.preferences.version=1
+encoding//Intbee_API/Request/product/__init__.py=utf-8
+encoding//Intbee_API/Request/product/add_product.py=utf-8
+encoding//Intbee_API/Request/product/editing_product.py=utf-8
+encoding//Intbee_API/Request/product/product_details.py=utf-8
+encoding//Intbee_API/Request/product/product_list.py=utf-8
+encoding//Intbee_API/Request/product/update_product_status.py=utf-8
+encoding//Intbee_API/Request/user/IB_feedback_list.py=utf-8
+encoding//Intbee_API/Request/user/__init__.py=utf-8
 encoding//Intbee_API/Request/user/cosumer_information.py=utf-8
+encoding//Intbee_API/Request/user/feedback.py=utf-8
 encoding//Intbee_API/Request/user/users.py=utf-8
+encoding//Intbee_API/Request/user/users_add_follow.py=utf-8
+encoding//Intbee_API/Request/user/users_delete_follow.py=utf-8
+encoding//Intbee_API/Request/user/users_follow.py=utf-8
 encoding//Intbee_API/common/readExcel.py=utf-8
