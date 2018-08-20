@@ -23,3 +23,4 @@ class user_information():
             print('Flase')
             print(user_text)
         
+user_information.user_infromation()
