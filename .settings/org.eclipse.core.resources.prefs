@@ -1,4 +1,13 @@
 eclipse.preferences.version=1
+encoding//Intbee_API/Request/order/merchant_amount_log.py=utf-8
+encoding//Intbee_API/Request/order/order_Count.py=utf-8
+encoding//Intbee_API/Request/order/order_agree_refund.py=utf-8
+encoding//Intbee_API/Request/order/order_carrier.py=utf-8
+encoding//Intbee_API/Request/order/order_carrier_log.py=utf-8
+encoding//Intbee_API/Request/order/order_details.py=utf-8
+encoding//Intbee_API/Request/order/order_list.py=utf-8
+encoding//Intbee_API/Request/order/order_refund.py=utf-8
+encoding//Intbee_API/Request/order/order_refuse_refund.py=utf-8
 encoding//Intbee_API/Request/product/__init__.py=utf-8
 encoding//Intbee_API/Request/product/add_product.py=utf-8
 encoding//Intbee_API/Request/product/editing_product.py=utf-8
