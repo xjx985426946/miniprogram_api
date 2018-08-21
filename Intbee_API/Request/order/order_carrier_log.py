@@ -15,7 +15,7 @@ class order_carrier_log():   #订单物流轨迹查询
         url = 'https://test-wechatapp.intbee.com/api/order/78/carrier/logistic/'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order list is OK')

@@ -15,7 +15,7 @@ class merchant_amount_log():   #账单明细
         url = 'https://test-wechatapp.intbee.com/api/merchant/amount/log'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, merchant amount log  is OK')

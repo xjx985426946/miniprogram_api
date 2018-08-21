@@ -16,7 +16,7 @@ class feedback_list():    #管理后台-获取用户反馈列表
 
         req = requests.get(url, headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, IB feedback list is OK')

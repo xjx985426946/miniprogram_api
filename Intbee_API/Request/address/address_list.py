@@ -15,7 +15,7 @@ class address_list():   #获取地址信息
         url = 'https://test-wechatapp.intbee.com/api//address/5ac344b8bc8e770005f72ce9'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, address list is OK')

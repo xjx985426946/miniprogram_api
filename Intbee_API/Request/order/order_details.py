@@ -15,7 +15,7 @@ class order_details():   #获取订单列表
         url = 'https://test-wechatapp.intbee.com/api/order/75'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order details is OK')

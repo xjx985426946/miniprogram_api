@@ -15,7 +15,7 @@ class cosumer_information():    #查询消费者用户
         url = 'https://test-wechatapp.intbee.com/api/user/consumer/5ac344b8bc8e770005f72ce9'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, cosumer infomation is OK')

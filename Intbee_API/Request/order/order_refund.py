@@ -15,7 +15,7 @@ class order_refund():   #申请退款
         url = 'https://test-wechatapp.intbee.com/api/order/75/apply/refund'
         req = requests.post(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order refund is OK')
@@ -23,4 +23,4 @@ class order_refund():   #申请退款
             print('Flase')
             print(user_text)
             
-        
+order_refund.refund()        

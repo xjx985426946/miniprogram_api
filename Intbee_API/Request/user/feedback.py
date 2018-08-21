@@ -21,7 +21,7 @@ class user_feedback():    #用户反馈
         data_json = json.dumps(data)
         req = requests.post(url, headers = headers, data = data_json)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, user feedback is OK')

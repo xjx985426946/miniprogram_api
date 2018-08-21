@@ -29,7 +29,7 @@ class add_product():   #添加商品
         url = 'https://test-wechatapp.intbee.com/api/product'
         req = requests.post(url,headers = headers,data=data_json)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, add product is OK')

@@ -15,7 +15,7 @@ class user_add_follow():   #添加关注商家
         url = 'https://test-wechatapp.intbee.com/api/user/5ac344b8bc8e770005f72ce9/followMerchant?uuid=5b0e5f2b53bbc10005380ca6'
         req = requests.post(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, user add follow is OK')

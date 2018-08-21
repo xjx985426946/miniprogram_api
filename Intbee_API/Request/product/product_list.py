@@ -15,7 +15,7 @@ class product_list():   #获取商品信息列表
         url = 'https://test-wechatapp.intbee.com/api/product'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, product list is OK')

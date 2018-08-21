@@ -15,7 +15,7 @@ class user_information():   #获取用户信息
         url = 'https://test-wechatapp.intbee.com/api/user/5ac344b8bc8e770005f72ce9'
         req = requests.get(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, user infomation is OK')

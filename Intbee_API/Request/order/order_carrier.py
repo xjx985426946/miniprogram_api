@@ -21,7 +21,7 @@ class order_carrier():   #订单发货
         url = 'https://test-wechatapp.intbee.com/api/order/75/carrier'
         req = requests.post(url ,headers = headers,data=data_json)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order carrier is OK')

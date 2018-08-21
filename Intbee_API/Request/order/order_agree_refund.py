@@ -15,7 +15,7 @@ class order_agree_refund():   #同意退款
         url = 'https://test-wechatapp.intbee.com/api/order/75/agree/refund'
         req = requests.post(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order agree refund is OK')

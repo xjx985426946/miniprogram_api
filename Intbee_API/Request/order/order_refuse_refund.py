@@ -15,7 +15,7 @@ class order_refuse_refund():   #拒绝退款
         url = 'https://test-wechatapp.intbee.com/api/order/75/refuse/refund'
         req = requests.post(url ,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, order refuse refund is OK')

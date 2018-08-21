@@ -17,7 +17,7 @@ class update_produt_status():   #更新商品状态
         url = 'https://test-wechatapp.intbee.com/api/product/5ac344b8bc8e770005f72ce9/35/2'
         req = requests.put(url,headers = headers)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, update product status is OK')

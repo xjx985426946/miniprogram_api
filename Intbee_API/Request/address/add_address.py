@@ -27,7 +27,7 @@ class add_address():   #新增/编辑收货地址
         url = 'https://test-wechatapp.intbee.com/api/address'
         req = requests.get(url ,headers = headers,data=data_json)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, add address is OK')

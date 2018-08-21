@@ -29,7 +29,7 @@ class editing_product():   #编辑商品
         url = 'https://test-wechatapp.intbee.com/api/product/34'
         req = requests.post(url,headers = headers,data=data_json)
         user_text = req.text
-        user_json = json.loads(user_text)
+        user_json = req.json()
 
         if user_json['code'] == 0:
             print('Ture, edit product is OK')
