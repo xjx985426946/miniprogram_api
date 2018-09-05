@@ -6,13 +6,15 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
+
 
 class user_delete_follow():   #取消已关注商家
     def delete_follow():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY'
-            }
-        url = 'https://test-wechatapp.intbee.com/api/user/5ac344b8bc8e770005f72ce9/followMerchant?uuid=5b0e5f2b53bbc10005380ca6'
+        headers = BaseRequest.headers
+        url = str(BaseRequest.url) + '/user/5ac344b8bc8e770005f72ce9/followMerchant?uuid=5b0e5f2b53bbc10005380ca6'
         req = requests.delete(url,headers = headers)
         user_text = req.text
         user_json = req.json()

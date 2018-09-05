@@ -6,6 +6,9 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
 
 class add_address():   #新增/编辑收货地址
     def add_edit():

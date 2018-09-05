@@ -6,13 +6,13 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
 
 class add_product():   #添加商品
     def add():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY',
-            'Content-Type': 'application/json'
-            }
+        headers = BaseRequest.headers
         data = {
             "merchant_uuid":"5ac344b8bc8e770005f72ce9",
             "title": "测试123",
@@ -26,7 +26,7 @@ class add_product():   #添加商品
             "description": "[{\"text\":\"恶魔一组图\",\"image\":\"http://miniprogram-static.intbee.com/Fjc6YVEbkyO96TBkYyBLKxxv8a8K\"}]"
           }
         data_json = json.dumps(data)
-        url = 'https://test-wechatapp.intbee.com/api/product'
+        url = str(BaseRequest.url) + '/product'
         req = requests.post(url,headers = headers,data=data_json)
         user_text = req.text
         user_json = req.json()

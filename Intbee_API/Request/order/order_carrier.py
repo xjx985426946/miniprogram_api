@@ -6,19 +6,20 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
 
 class order_carrier():   #订单发货
     def carrier():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY'
-            }
+        headers = BaseRequest.headers
         data = {
                 "carrier_company":"申通快递",
                 "carrier_no": "221340481292",
                 "carrier_company_no":"STO"
             }
         data_json = json.dumps(data)
-        url = 'https://test-wechatapp.intbee.com/api/order/75/carrier'
+        url = BaseRequest.url + '/order/75/carrier'
         req = requests.post(url ,headers = headers,data=data_json)
         user_text = req.text
         user_json = req.json()

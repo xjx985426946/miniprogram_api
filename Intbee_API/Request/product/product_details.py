@@ -6,13 +6,14 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
 
 class product_details():   #获取商品详情
     def details():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY'
-            }
-        url = 'https://test-wechatapp.intbee.com/api/product/31'
+        headers = BaseRequest.headers
+        url = str(BaseRequest.url) + '/product/31'
         req = requests.get(url ,headers = headers)
         user_text = req.text
         user_json = req.json()

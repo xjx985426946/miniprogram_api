@@ -6,13 +6,14 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
 
 class order_carrier_log():   #订单物流轨迹查询
     def carrier_log():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY'
-            }
-        url = 'https://test-wechatapp.intbee.com/api/order/78/carrier/logistic/'
+        headers = BaseRequest.headers
+        url = BaseRequest.url + '/order/78/carrier/logistic/'
         req = requests.get(url ,headers = headers)
         user_text = req.text
         user_json = req.json()

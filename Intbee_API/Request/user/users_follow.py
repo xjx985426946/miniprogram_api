@@ -6,13 +6,15 @@
 import urllib3
 import requests
 import json
+import sys
+sys.path.append("../base/")
+from base_request import BaseRequest
+
 
 class user_follow():   #获取用户关注商家信息
     def follow():
-        headers = {
-            'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MDEiLCJzdWIiOiI1YWMzNDRiOGJjOGU3NzAwMDVmNzJjZTkiLCJpYXQiOjE1MzM4MDk4MzA0NjEsImV4cCI6MTUzMzgzNTAzMDQ2MX0.NVJsKhRmrnve-6pMlSMto4CesFKY8N6RGpCurqzWvCY'
-            }
-        url = 'https://test-wechatapp.intbee.com/api/user/5ac344b8bc8e770005f72ce9/followMerchant'
+        headers = BaseRequest.headers
+        url =  str(BaseRequest.url) + '/user/5ac344b8bc8e770005f72ce9/followMerchant'
         req = requests.get(url ,headers = headers)
         user_text = req.text
         user_json = req.json()
